@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    public class Base : Pessoa
+    public class Base : IPessoa
     {
 
         public Base(string nome, string telefone, string cpf)
@@ -18,37 +18,37 @@ namespace Classes
             this.CPF = cpf;
         }
 
-        public Base()
-        {
-        }
-
+        public Base() { }
 
         public string Nome;
         public string Telefone;
         public string CPF;
 
+        public void SetNome(string nome) { this.Nome = nome; }
+        public void SetTelefone(string telefone) { this.Telefone = telefone; }
+        public void SetCpf(string cpf) { this.CPF = cpf; }
+
         private string sobrenome = "Santos";
 
         public virtual void Gravar()
         {
-            var dados = new Base().Ler();
+            var dados = this.Ler();
             dados.Add(this);
-            if (File.Exists(diretorioComArquivo()))
+
+            StreamWriter r = new StreamWriter(diretorioComArquivo());
+            r.WriteLine("nome;telefone;cpf;");
+            foreach (Base b in dados)
             {
-                StreamWriter r = new StreamWriter(diretorioComArquivo());
-                r.WriteLine("nome;telefone;cpf;");
-                foreach (Base b in dados)
-                {
-                    var linha = b.Nome + ";" + b.Telefone + ";" + b.CPF + ";";
-                    r.WriteLine(linha);
-                }
-                r.Close();
+                var linha = b.Nome + ";" + b.Telefone + ";" + b.CPF + ";";
+                r.WriteLine(linha);
             }
+            r.Close();
+
         }
 
-        public List<Base> Ler()
+        public List<IPessoa> Ler()
         {
-            var dados = new List<Base>();
+            var dados = new List<IPessoa>();
             if (File.Exists(diretorioComArquivo()))
             {
                 using (StreamReader arquivo = File.OpenText(diretorioComArquivo()))
@@ -61,8 +61,11 @@ namespace Classes
                         if (i == 1) continue;
                         var baseArquivo = linha.Split(';');
 
-                        var cliente = new Base(baseArquivo[0], baseArquivo[1], baseArquivo[2]);
-                        dados.Add(cliente);
+                        var b = (IPessoa)Activator.CreateInstance(this.GetType());
+                        b.SetNome(baseArquivo[0]);
+                        b.SetTelefone(baseArquivo[1]);
+                        b.SetCpf(baseArquivo[2]);
+                        dados.Add(b);
                     }
                 }
             }
