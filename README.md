@@ -5,3 +5,4 @@
 28/07 - Aula 15 - POO - Polimorfismo <br/>
 29/07 - Aula 17 - POO - Interface <br/>
 29/07 - Aula 18 - POO - Abstração <br/>
+29/07 - Aula 18 - POO - Propriedades <br/>

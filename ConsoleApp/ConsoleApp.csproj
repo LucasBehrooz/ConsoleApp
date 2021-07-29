@@ -61,7 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculo\Media.cs" />
+    <Compile Include="Classes\Animal.cs" />
     <Compile Include="Classes\Base.cs" />
+    <Compile Include="Classes\Cachorro.cs" />
     <Compile Include="Classes\Cliente.cs" />
     <Compile Include="Classes\IPessoa.cs" />
     <Compile Include="Classes\Usuario.cs" />

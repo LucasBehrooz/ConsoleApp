@@ -1,5 +1,6 @@
 ﻿using Classes;
 using Componentes;
+using Classes;
 using System;
 using System.Collections.Generic;
 using Tela;
@@ -10,48 +11,58 @@ namespace TorneseUmProgramador
     {
         static void Main(string[] args)
         {
-            // Menu.Criar();
-            Console.WriteLine("\n==================== Cadastro de Cliente ====================\n");
-            Cliente c = new Cliente();
-            c.Nome = "Cliente";
-            c.Telefone = "5531323131";
-            c.CPF = "1313131321";
-            c.Gravar();
+            var c = new Cachorro();
+            c.Idade = 1;
+            Console.WriteLine(c.Idade);
 
 
-            foreach (Cliente c1 in new Cliente().Ler())
-            {
-                Console.WriteLine(c1.Nome);
-                Console.WriteLine(c1.Telefone);
-                Console.WriteLine(c1.CPF);
-                Console.WriteLine("==================================");
-            }
+            c.Idade2 = 1;
 
-            Console.WriteLine("\n==================== Cadastro de Usuarios ====================\n");
-                        Usuario u = new Usuario();
-            u.Nome = "Usuario";
-            u.Telefone = "5531323131";
-            u.CPF = "1313131321";
-            u.Gravar();
-            foreach (Usuario us in new Usuario().Ler())
-            {
-                Console.WriteLine(us.Nome);
-                Console.WriteLine(us.Telefone);
-                Console.WriteLine(us.CPF);
-                Console.WriteLine("==================================");
-            }
-
-
-
-            /*
-             Ferramentas f = new Ferramentas();
-               bool d = f.ValidarCPF("12345678900");
-
-               Cliente c = new Cliente();
-               c.CalcularUmMaisDois4();
-               Console.WriteLine("\n==================== Cadastro de Usuario ====================\n");
-
-*/
+            Console.WriteLine(c.Idade2);
         }
     }
 }
+#region
+
+/* var cachorro = new Cachorro();
+ cachorro.Latir();
+ // Menu.Criar();
+ Console.WriteLine("\n==================== Cadastro de Cliente ====================\n");
+ Cliente c = new Cliente();
+ c.Nome = "Cliente";
+ c.Telefone = "5531323131";
+ c.CPF = "1313131321";
+ c.Gravar();
+
+ foreach (Cliente c1 in new Cliente().Ler())
+ {
+     Console.WriteLine(c1.Nome);
+     Console.WriteLine(c1.Telefone);
+     Console.WriteLine(c1.CPF);
+     Console.WriteLine("==================================");
+ }
+
+ Console.WriteLine("\n==================== Cadastro de Usuarios ====================\n");
+             Usuario u = new Usuario();
+ u.Nome = "Usuario";
+ u.Telefone = "5531323131";
+ u.CPF = "1313131321";
+ u.Gravar();
+ foreach (Usuario us in new Usuario().Ler())
+ {
+     Console.WriteLine(us.Nome);
+     Console.WriteLine(us.Telefone);
+     Console.WriteLine(us.CPF);
+     Console.WriteLine("==================================");
+ }
+
+  Ferramentas f = new Ferramentas();
+    bool d = f.ValidarCPF("12345678900");
+
+    Cliente c = new Cliente();
+    c.CalcularUmMaisDois4();
+    Console.WriteLine("\n==================== Cadastro de Usuario ====================\n");
+
+*/
+
+#endregion
