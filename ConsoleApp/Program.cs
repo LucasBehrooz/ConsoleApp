@@ -1,9 +1,5 @@
 ﻿using Classes;
-using Componentes;
-using Classes;
 using System;
-using System.Collections.Generic;
-using Tela;
 
 namespace TorneseUmProgramador
 {
