@@ -1,48 +1,23 @@
 ﻿using Classes;
 using System;
+using Tela;
 
 namespace TorneseUmProgramador
 {
-    partial class Animal
-    {
-        public string teste;
-        partial void tt();
-    }
-
-    partial class Animal
-    {
-        public string teste2;
-        partial void tt()
-        {
-            Console.WriteLine("teste");
-        }
-    }
-
     class Program
     {
         static void Main(string[] args)
         {
-
-            var a = new Animal();
-            a.teste = ";";
-
-            var c = new Cachorro();
-            c.Idade = 1;
-            Console.WriteLine(c.Idade);
-
-
-            c.Idade2 = 1;
-
-            Console.WriteLine(c.Idade2);
+            Menu.Criar();
         }
     }
-
 }
-#region
+
+#region Codigos das Aulas de OO
 
 /* var cachorro = new Cachorro();
  cachorro.Latir();
- // Menu.Criar();
+ // 
  Console.WriteLine("\n==================== Cadastro de Cliente ====================\n");
  Cliente c = new Cliente();
  c.Nome = "Cliente";
@@ -79,12 +54,42 @@ namespace TorneseUmProgramador
     c.CalcularUmMaisDois4();
     Console.WriteLine("\n==================== Cadastro de Usuario ====================\n");
 
-*/
+ partial class Animal
+    {
+        public string teste;
+        partial void tt();
+    }
 
-#endregion
+    partial class Animal
+    {
+        //public string teste2;
+        partial void tt()
+        {
+            Console.WriteLine("teste");
+        }
+    }
+            Email.Instancia.Corpo = "bla bla bla";
+            Email.Instancia.Titulo = "Title Email";
+            Email.Instancia.Origem = "teste@mail.com.br";
+            Email.Instancia.Destino = "teste@mail.com.br";
 
-#region animal
-/* class Animal
+            Email.Instancia.EnviarEmail();
+
+            var a = new Animal();
+            a.teste = ";";
+
+            var c = new Cachorro();
+            c.Idade = 1;
+            Console.WriteLine(c.Idade);
+
+
+            c.Idade2 = 1;
+
+            Console.WriteLine(c.Idade2);
+        }
+    }
+
+class Animal
  {
      public string teste;
 
@@ -100,8 +105,6 @@ namespace TorneseUmProgramador
      {
          return "sss";
      }
+
  }*/
 #endregion
-
-
-

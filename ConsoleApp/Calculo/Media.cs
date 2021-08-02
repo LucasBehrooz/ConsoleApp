@@ -10,7 +10,7 @@ namespace Calculo
     {
         public static void Aluno()
         {
-            Console.WriteLine("Digite o nome do Aluno: ");
+            Console.Write("Digite o nome do Aluno: ");
             string nome = Console.ReadLine();
             int qtoNotas = 3;
             Console.WriteLine("Digite as " + qtoNotas + " notas do aluno " + nome);
@@ -18,18 +18,19 @@ namespace Calculo
             int totalNotas = 0;
             for (int i = 1; i <= qtoNotas; i++)
             {
-                Console.WriteLine("Digite a nota numero: " + i);
+                Console.Write("Digite a nota numero " + i + ": ");
                 int nota = int.Parse(Console.ReadLine());
                 totalNotas += nota;
                 notas.Add(nota);
             }
             int media = totalNotas / notas.Count;
-            Console.WriteLine("A Média do Aluno " + nome + " é:" + media);
-            Console.WriteLine("Suas notas são:\n");
+            Console.WriteLine("\nA Média do Aluno " + nome + " é: " + media);
+            Console.WriteLine("Suas notas são:");
             foreach (int nota in notas)
             {
-                Console.WriteLine("Nota: " + nota + "\n");
+                Console.WriteLine("Nota: " + nota);
             }
+            Console.WriteLine("==============================\n");
         }
 
     }
