@@ -3,10 +3,29 @@ using System;
 
 namespace TorneseUmProgramador
 {
+    partial class Animal
+    {
+        public string teste;
+        partial void tt();
+    }
+
+    partial class Animal
+    {
+        public string teste2;
+        partial void tt()
+        {
+            Console.WriteLine("teste");
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
+
+            var a = new Animal();
+            a.teste = ";";
+
             var c = new Cachorro();
             c.Idade = 1;
             Console.WriteLine(c.Idade);
@@ -17,6 +36,7 @@ namespace TorneseUmProgramador
             Console.WriteLine(c.Idade2);
         }
     }
+
 }
 #region
 
@@ -62,3 +82,26 @@ namespace TorneseUmProgramador
 */
 
 #endregion
+
+#region animal
+/* class Animal
+ {
+     public string teste;
+
+     public virtual string teste2()
+     {
+         return "";
+     }
+ }
+
+ class Macaco : Animal
+ {
+     public override string teste2()
+     {
+         return "sss";
+     }
+ }*/
+#endregion
+
+
+
